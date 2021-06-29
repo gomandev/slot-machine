@@ -4,8 +4,8 @@ import React, { Component, PureComponent } from 'react';
 // Spring React
 import { Spring } from 'react-spring';
 // Store
-import audioSlot from '../audios/reel.wav';
-import audioWin from '../audios/winner.wav';
+const audioSlot = require('../audios/reel.wav');
+const audioWin = require('../audios/winner.wav');
 import { lines, prizes, sliders } from 'mock/data';
 import { LineInterface, PrizeInterface } from 'mock/data';
 import Spinner from '@modules/atoms/Spin';
@@ -88,7 +88,7 @@ class Index extends PureComponent<any, any> {
   };
 
   // Handles chages in the slider on debug mode.
-  handleChangeSlider = name => (e, value) => {
+  handleChangeSlider = (name: string) => (e, value) => {
     this.setState({ [name]: value });
   };
 

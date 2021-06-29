@@ -1,12 +1,10 @@
-import { FC } from 'react';
-import Image from 'next/image';
 import { Spring } from 'react-spring';
 //images
-import bar_img from '../../../images/BAR.png';
-import twobar_img from '../../../images/2xBAR.png';
-import threebar_img from '../../../images/3xBAR.png';
-import seven_img from '../../../images/7.png';
-import cherry_img from '../../../images/Cherry.png';
+const bar_img = require('../../../images/BAR.png');
+const twobar_img = require('../../../images/2xBAR.png');
+const threebar_img = require('../../../images/3xBAR.png');
+const seven_img = require('../../../images/7.png');
+const cherry_img = require('../../../images/Cherry.png');
 
 function createData(name: string, prize: number, image: any) {
   return { name, prize, image };
