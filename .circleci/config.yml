@@ -1,0 +1,40 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: Install Deps
+          command: npm install
+      - run:
+          name: Run Unit Test
+          command: npm test
+  chromatic-deploy:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: Install Deps
+          command: npm install
+      - run:
+          name: Deploy Stories to Chromatic
+          command: npm run chromatic
+workflows:
+  run-unit-tests:
+    jobs:
+      - build-and-test:
+        filters:
+          branches:
+            - development
+            - main
+  publish-chromatic:
+    jobs:
+      - chromatic-deploy:
+        filters:
+          branches:
+            only: development
