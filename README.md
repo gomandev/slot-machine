@@ -4,7 +4,7 @@
 
 This application is live on vercel:
 
-https://slot-machine-app-test.herokuapp.com
+https://slot-machine-stimulator.vercel.app
 
 ### Interface
 
